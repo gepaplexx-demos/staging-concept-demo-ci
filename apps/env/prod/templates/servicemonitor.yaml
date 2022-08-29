@@ -3,6 +3,9 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: scraping-gepardenblick
+  labels:
+    required-hotfix: prod
+    debug-hotfix: prod
 spec:
   endpoints:
     - interval: 30s
