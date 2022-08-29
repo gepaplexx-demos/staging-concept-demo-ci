@@ -1,0 +1,51 @@
+gepardenblick:
+  replicaCount: 1
+  image:
+    name: ghcr.io/gepaplexx/gepardenblick
+    tag: "40f5c99"
+  ports:
+    - containerPort: 8080
+      protocol: TCP
+    - containerPort: 8443
+      protocol: TCP
+    - containerPort: 8778
+      protocol: TCP
+  service:
+    type: ClusterIP
+    port: 8080
+    targetPort: 8080
+  route:
+    enabled: true
+    basename: apps.play.gepaplexx.com
+    tls:
+      enabled: true
+      termination: edge
+  env:
+    - name: AB_JOLOKIA_OFF
+      value: 'true'
+    - name: AB_PROMETHEUS_OFF
+      value: 'true'
+    - name: JAVA_MAX_MEM_RATIO
+      value: '95'
+    - name: JAVA_OPTIONS
+      value: '-Djava.net.preferIPv4Stack=true'
+  resources:
+    requests:
+      cpu: 75m
+      memory: 128Mi
+    limits:
+      cpu: 2
+      memory: 500Mi
+  readinessProbe:
+    enabled: true
+    path: /q/health/ready
+  livenessProbe:
+    enabled: true
+    path: /q/health/live
+  secrets:
+    - name: secret-gepardenblick
+      mountPath: "/work/config/"
+      items:
+        - key: application.properties
+          value: "YXJnb0NEdG9rZW49ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnBjM01pT2lKaGNtZHZZMlFpTENKemRXSWlPaUpuWlhCaGNtUmxibUpzYVdOck9tRndhVXRsZVNJc0ltNWlaaUk2TVRZMU56YzRNekU1TUN3aWFXRjBJam94TmpVM056Z3pNVGt3TENKcWRHa2lPaUpoWkRGbE9UQTNOaTFtWXpsbExUUXdNMlF0WVRrMk15MW1ZVGxpTmpCbFpHTXlZVElpZlEuMnJVZ2hpV0htSEw4OTNCYVpvSTZVaUNfOGpzVTl5UTNEZ2J6akxUZ005Ywp0b2tlbj1naHBfc3NnZ3BOOEFKUlpWS2VWamhjZXBDZDFFZ2h6bTlXMWpHelhP"
+          b64encoded: true

@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: staging-demo
+  namespace: gepaplexx-cicd
+  labels:
+    owner: gepaplexx
+    scope: demo
+spec:
+  description: ArgoCD Project to deploy a sample application to showcase our staging concept
+  # Allow manifests to deploy only from this repositories
+  sourceRepos:
+    - '*'
+  destinations:
+    - '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: Namespace
+  # Enables namespace orphaned resource monitoring.
+  orphanedResources:
+    warn: true
+
