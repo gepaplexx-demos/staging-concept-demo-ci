@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: staging-demo
-  namespace: gepaplexx-cicd
+  namespace: gepaplexx-cicd-tools
   labels:
     owner: gepaplexx
     scope: demo
@@ -12,7 +12,8 @@ spec:
   sourceRepos:
     - '*'
   destinations:
-    - '*'
+    - namespace: '*'
+      server: 'https://kubernetes.default.svc'
   clusterResourceWhitelist:
     - group: '*'
       kind: Namespace
