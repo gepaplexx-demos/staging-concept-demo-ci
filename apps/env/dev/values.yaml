@@ -34,7 +34,7 @@ gepardenblick:
       cpu: 75m
       memory: 128Mi
     limits:
-      cpu: 2
+      cpu: 1
       memory: 500Mi
   readinessProbe:
     enabled: true
