@@ -49,6 +49,3 @@ staging-concept-demo:
         - key: application.properties
           value: "YXJnb0NEdG9rZW49ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SnBjM01pT2lKaGNtZHZZMlFpTENKemRXSWlPaUpuWlhCaGNtUmxibUpzYVdOck9tRndhVXRsZVNJc0ltNWlaaUk2TVRZMU56YzRNekU1TUN3aWFXRjBJam94TmpVM056Z3pNVGt3TENKcWRHa2lPaUpoWkRGbE9UQTNOaTFtWXpsbExUUXdNMlF0WVRrMk15MW1ZVGxpTmpCbFpHTXlZVElpZlEuMnJVZ2hpV0htSEw4OTNCYVpvSTZVaUNfOGpzVTl5UTNEZ2J6akxUZ005Ywp0b2tlbj1naHBfc3NnZ3BOOEFKUlpWS2VWamhjZXBDZDFFZ2h6bTlXMWpHelhP"
           b64encoded: true
-staging-concept-demo:
-  image:
-    tag: "gattma-3"
