@@ -51,4 +51,4 @@ gepardenblick:
           b64encoded: true
 staging-concept-demo:
   image:
-    tag: "gattma"
+    tag: "gattma-2"
