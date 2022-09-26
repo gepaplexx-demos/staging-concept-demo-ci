@@ -51,4 +51,4 @@ staging-concept-demo:
           b64encoded: true
 staging-concept-demo:
   image:
-    tag: "gattma-2"
+    tag: "gattma-3"
