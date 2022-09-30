@@ -2,7 +2,7 @@ staging-concept-demo:
   replicaCount: 1
   image:
     name: ghcr.io/gepaplexx/gepardenblick
-    tag: "gattma-3"
+    tag: "40f5c99"
   ports:
     - containerPort: 8080
       protocol: TCP
