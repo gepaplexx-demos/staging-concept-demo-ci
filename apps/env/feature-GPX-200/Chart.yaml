@@ -1,9 +1,0 @@
-apiVersion: v2
-name: gepardenblick
-type: application
-version: 1.0.0
-dependencies:
-- alias: gepardenblick
-  name: gp-bke-runtime-minimal-application
-  version: 0.1.3
-  repository: https://gepaplexx.github.io/gp-helm-chart-development
